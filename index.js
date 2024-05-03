@@ -11,7 +11,9 @@ app.use(express.json());
 
 app.use("/", router);
 DbConnection();
-
+app.get("/", (req, res) => {
+  res.send("sucess");
+});
 app.listen(PORT, () => {
   console.log("server start at port 5000");
 });
