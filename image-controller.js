@@ -8,10 +8,11 @@ export const uploadImage = async (request, response) => {
   };
   try {
     const file = await File.create(fileObject);
-    // console.log(file);
     response
       .status(200)
-      .json({ path: `http://localhost:5000/uploadfile/${file._id}` });
+      .json({
+        path: `https://file-sharing-serverside.onrender.com/uploadfile/${file._id}`,
+      });
   } catch (error) {
     console.error(error.message);
     response.status(500).json({ Erroe: error.message });

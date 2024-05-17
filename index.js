@@ -4,7 +4,11 @@ import cors from "cors";
 import DbConnection from "./database/database.js";
 
 const app = express();
+const cron = require("node-cron");
 
+cron.schedule(" */15 * * * *", () => {
+  console.log("running");
+});
 const PORT = 5000;
 app.use(cors());
 app.use(express.json());
